@@ -1,3 +1,3 @@
-module github.com/asdfractal/aoc-2023
+module aoc
 
 go 1.21.4
