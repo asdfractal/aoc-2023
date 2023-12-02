@@ -6,6 +6,31 @@ import (
 	"os"
 )
 
+// Greatest Common Denominator
+func Gcd(a, b int64) int64 {
+	for b != 0 {
+		a, b = b, a%b
+	}
+
+	return a
+}
+
+// Least Common Multiple
+func Lcm(a, b int64) int64 {
+	return a * b / Gcd(a, b)
+}
+
+// Kernighan's Bit Counting Algorithm
+func CountBits(n uint64) int64 {
+	var count int64 = 0
+	for n > 0 {
+		n = n & (n - 1)
+		count++
+	}
+
+	return count
+}
+
 func CkeckErr(msg interface{}) {
 	if msg != nil {
 		fmt.Fprintln(os.Stderr, "Error:", msg)
