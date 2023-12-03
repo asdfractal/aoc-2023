@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 // Greatest Common Denominator
@@ -53,4 +54,12 @@ func ReadFile(filename string) []string {
 	CkeckErr(err)
 
 	return result
+}
+
+func Strint(s string) int {
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		panic(err.Error())
+	}
+	return i
 }
